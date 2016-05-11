@@ -17,5 +17,4 @@ Feel free to fix and/or leave feedback on how it can be improved.
  
 ## Usage
 Be sure to chmod +x 
-
-Invoke app with preferred launch method (run dialog, add to menu, etc)
+Open spotify, then invoke this app with your preferred launch method (run dialog, add to menu, etc)
