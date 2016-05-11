@@ -10,6 +10,7 @@ Feel free to fix and/or leave feedback on how it can be improved.
 ## Requirements 
  - PyQt4
  - dbus-python
+ - urllib
  
 ## Usage
 Be sure to chmod +x 
