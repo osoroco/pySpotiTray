@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import dbus
+import os.path
 from PyQt4 import QtGui,QtCore
 
 session_bus = dbus.SessionBus()
@@ -25,6 +26,17 @@ def isPlaying():
         return False
     elif status == "Playing":
         return True
+def getIcon():
+    if os.path.exists('/usr/share/spotify/icons/spotify-linux-24.png'):
+        icon = QtGui.QIcon('/usr/share/spotify/icons/spotify-linux-24.png')
+        return icon
+    else:
+        import urllib
+        url = "https://raw.githubusercontent.com/osoroco/pySpotiTray/master/spotify-linux-24.png"
+        pix = QtGui.QPixmap()
+        pix.loadFromData(urllib.urlopen(url).read())
+        icon = QtGui.QIcon(pix)
+        return icon
 
 class RightClickMenu(QtGui.QMenu):
     def __init__(self,parent=None):
@@ -53,7 +65,7 @@ class RightClickMenu(QtGui.QMenu):
 class SystemTrayIcon(QtGui.QSystemTrayIcon):
     def __init__(self,parent=None):
         QtGui.QSystemTrayIcon.__init__(self,parent)
-        self.setIcon(QtGui.QIcon("/usr/share/spotify/icons/spotify-linux-24.png"))
+        self.setIcon(getIcon())
         self.right_menu=RightClickMenu()
         self.setContextMenu(self.right_menu)
         self.setToolTip(getSong())
