@@ -6,3 +6,12 @@ After an upgrade, the spotify linux client (version 1.0.28.89) no longer had a t
 Mediocre programming knowledge and a desire to remedy this issue have spawned this tray app.
 
 Feel free to fix and/or leave feedback on how it can be improved. 
+
+## Requirements 
+ - PyQt4
+ - dbus-python
+ 
+## Usage
+Be sure to chmod +x 
+
+Invoke app with preferred launch method (run dialog, add to menu, etc)
