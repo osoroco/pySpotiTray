@@ -7,6 +7,9 @@ Mediocre programming knowledge and a desire to remedy this issue have spawned th
 
 Feel free to fix and/or leave feedback on how it can be improved. 
 
+![demo gif]
+(http://imgur.com/Mafn0Du.gif)
+
 ## Requirements 
  - PyQt4
  - dbus-python
