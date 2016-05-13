@@ -74,7 +74,7 @@ def on_right_click(data, event_button, event_time):
 def on_left_click(event):
     print "we should play/pause here"
 def getIcon():
-    if os.path.exists('/usr/shar/spotify/icons/spotify-linux-24.png'):
+    if os.path.exists('/usr/share/spotify/icons/spotify-linux-24.png'):
         return gtk.status_icon_new_from_file('/usr/share/spotify/icons/spotify-linux-24.png')
     else:
         import urllib
