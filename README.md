@@ -11,9 +11,10 @@ Feel free to fix and/or leave feedback on how it can be improved.
 (http://imgur.com/Mafn0Du.gif)
 
 ## Requirements 
- - PyQt4
+ - PyQt4 (Qt version)
  - dbus-python
  - urllib
+ - gtk (gtk version)
  
 ## Usage
 Be sure to chmod +x 
