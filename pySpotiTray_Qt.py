@@ -1,16 +1,20 @@
 #!/usr/bin/python
 import dbus
 import os.path
+import signal
 from PyQt4 import QtGui,QtCore
 
 session_bus = dbus.SessionBus()
 spotify_bus = session_bus.get_object("org.mpris.MediaPlayer2.spotify","/org/mpris/MediaPlayer2")
 spotify_interface = dbus.Interface(spotify_bus,'org.mpris.MediaPlayer2.Player')
 spotify_properties = dbus.Interface(spotify_bus,"org.freedesktop.DBus.Properties")
+
+signal.signal(signal.SIGINT,signal.SIG_DFL)
+
 def getSong():
     metadata = spotify_properties.Get("org.mpris.MediaPlayer2.Player","Metadata")
     artist = str(metadata['xesam:artist'][0])
-    song = str(metadata['xesam:title'])
+    song = metadata['xesam:title']
     return artist+" - "+song
 def nextSong():
     spotify_interface.Next()
